@@ -38,6 +38,26 @@ simulasyonListesi = {
     "Operator": 2,
 }
 
+
+
+def odemeYap():
+    satisDosyasi = open("C:/Users/user/Desktop/sayisDosyasi.txt", "w")
+    print("Odeme bolumune hosgeldiniz!")
+    name = input("Isim : ")
+    surname = input("Soyisim : ")
+    address = input("Adress : ")
+    tel = input("Telefon No : ")
+    kart = input("Kart No :")
+
+    satisDosyasi.write(name)
+    satisDosyasi.write(surname)
+    satisDosyasi.write(address)
+    satisDosyasi.write(tel)
+    satisDosyasi.write(kart)
+    satisDosyasi.write(sepeteEkle)
+    print("Odeme isleminiz tamamlandi. Tesekkur ederiz.")
+
+
 satinAl = 0
 sepeteEkle = 0
 while satinAl == 0:
@@ -54,7 +74,7 @@ while satinAl == 0:
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
             else:
-                print("fonkyiyon")
+                odemeYap()
 
         elif oyunNo == 2:
             print("Biomutant oyunu sepete eklendi...")
@@ -63,7 +83,7 @@ while satinAl == 0:
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
             else:
-                print("fonkyiyon")
+                odemeYap()
 
         elif oyunNo == 3:
             print("Soulworker oyunu sepete eklendi...")
@@ -72,7 +92,7 @@ while satinAl == 0:
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
             else:
-                print("fonkyiyon")
+                odemeYap()
 
 
         elif oyunNo == 4:
@@ -82,7 +102,7 @@ while satinAl == 0:
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
             else:
-                print("fonkyiyon")
+                odemeYap()
 
         elif oyunNo == 5:
             ("RONIN Two Souls oyunu sepete eklendi... ")
@@ -91,7 +111,7 @@ while satinAl == 0:
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
             else:
-                print("fonkyiyon")
+                odemeYap()
 
         elif oyunNo == 6:
             ("Yakuza oyunu sepete eklendi... ")
@@ -100,7 +120,7 @@ while satinAl == 0:
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
             else:
-                print("fonkyiyon")
+                odemeYap()
 
         elif oyunNo == 7:
             ("Graven oyunu sepete eklendi... ")
@@ -109,7 +129,7 @@ while satinAl == 0:
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
             else:
-                print("fonkyiyon")
+                odemeYap()
 
         elif oyunNo == 8:
             ("Riftdrifter oyunu sepete eklendi... ")
@@ -118,16 +138,18 @@ while satinAl == 0:
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
             else:
-                print("fonkyiyon")
+                odemeYap()
+
 
         elif oyunNo == 9:
             ("The Black Hole oyunu sepete eklendi... ")
             sepeteEkle += 32
             devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
             if devam == 1:
-                print("fonkyiyon")
-            else:
                 print("Liste bolumune yonlendiriliyor...")
+            else:
+                odemeYap()
+
 
         elif oyunNo == 10:
             ("Lost Souls oyunu sepete eklendi... ")
@@ -136,7 +158,7 @@ while satinAl == 0:
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
             else:
-                print("fonkyiyon")
+                odemeYap()
 
 
 
@@ -149,5 +171,3 @@ while satinAl == 0:
         satinAl = 1
 
 
-def odemeYap():
-    satisDosyasi = open("C:/Users/user/Desktop/sayisDosyasi.txt", "w")
