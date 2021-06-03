@@ -1,5 +1,6 @@
 print("Magazamiza Hos Geldiniz...")
 
+
 aksiyonListesi = {
     "Maneater": 61,
     "Biomutant": 300,
@@ -38,28 +39,27 @@ simulasyonListesi = {
     "Operator": 2,
 }
 
-class Odeme:
-    def odemeYap(self):
-        satisDosyasi = open("C:/Users/user/Desktop/sayisDosyasi.txt", "w")
-        print("Odeme bolumune hosgeldiniz!")
-        name = input("Isim : ")
-        surname = input("Soyisim : ")
-        address = input("Adress : ")
-        tel = input("Telefon No : ")
-        kart = input("Kart No :")
-
-        satisDosyasi.write(name)
-        satisDosyasi.write(surname)
-        satisDosyasi.write(address)
-        satisDosyasi.write(tel)
-        satisDosyasi.write(kart)
-        satisDosyasi.write(sepeteEkle)
-        print("Odeme isleminiz tamamlandi. Tesekkur ederiz.")
-odemeler = Odeme()
-
-
 satinAl = 0
 sepeteEkle = 0
+
+def odemeYap():
+    satisDosyasi = open("C:/Users/user/Desktop/sayisDosyasi.txt", "w")
+    print("Odeme bolumune hosgeldiniz!")
+    name = input("Isim : ")
+    surname = input("Soyisim : ")
+    address = input("Adress : ")
+    tel = input("Telefon No : ")
+    kart = input("Kart No :")
+
+    satisDosyasi.write(name)
+    satisDosyasi.write(surname)
+    satisDosyasi.write(address)
+    satisDosyasi.write(tel)
+    satisDosyasi.write(kart)
+    satisDosyasi.write(str(sepeteEkle))
+    print("Odeme isleminiz tamamlandi. Tesekkur ederiz.")
+
+
 while satinAl == 0:
     listeSec = int(input("Lutfen incelemek istegidiniz listeyi seciniz...0 = Aksiyon 1 = Spor 2 = Simulasyon"))
 
@@ -70,148 +70,185 @@ while satinAl == 0:
         if oyunNo == 1:
             print("Maneater oyunu sepete eklendi...")
             sepeteEkle += 61
-            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
+            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz 2 tusuna basiniz..."))
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
-            else:
-                print("Sepet tutarinizi onayliyor musunuz? : " + sepeteEkle)
+            elif devam == 2:
+                print("Sepet tutarinizi onayliyor musunuz? : " + str(sepeteEkle))
                 onay = int(input("Onaylamak icin 1 e basiniz..."))
                 if onay == 1:
-                    odemeler.odemeYap()
+                    odemeYap()
+                    satinAl = 1
                 else:
                     satinAl = 1
+            else:
+                print("Yanlis giris yapildi.")
+                satinAl = 1
 
         elif oyunNo == 2:
             print("Biomutant oyunu sepete eklendi...")
             sepeteEkle += 300
-            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
+            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz 2 tusuna basiniz..."))
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
-            else:
-                print("Sepet tutarinizi onayliyor musunuz? : " + sepeteEkle)
+            elif devam == 2:
+                print("Sepet tutarinizi onayliyor musunuz? : " + str(sepeteEkle))
                 onay = int(input("Onaylamak icin 1 e basiniz..."))
                 if onay == 1:
-                    odemeler.odemeYap()
+                    odemeYap()
+                    satinAl = 1
                 else:
                     satinAl = 1
+            else:
+                print("Yanlis giris yapildi.")
+                satinAl = 1
 
         elif oyunNo == 3:
             print("Soulworker oyunu sepete eklendi...")
             sepeteEkle += 10
-            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
+            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz 2 tusuna basiniz..."))
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
-            else:
-                print("Sepet tutarinizi onayliyor musunuz? : " + sepeteEkle)
+            elif devam == 2:
+                print("Sepet tutarinizi onayliyor musunuz? : " + str(sepeteEkle))
                 onay = int(input("Onaylamak icin 1 e basiniz..."))
                 if onay == 1:
-                    odemeler.odemeYap()
+                    odemeYap()
+                    satinAl = 1
                 else:
                     satinAl = 1
-
+            else:
+                print("Yanlis giris yapildi.")
+                satinAl = 1
 
         elif oyunNo == 4:
             print("Sea of Thieves oyunu sepete eklendi... ")
             sepeteEkle += 60
-            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
+            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz 2 tusuna basiniz..."))
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
-            else:
-                print("Sepet tutarinizi onayliyor musunuz? : " + sepeteEkle)
+            elif devam == 2:
+                print("Sepet tutarinizi onayliyor musunuz? : " + str(sepeteEkle))
                 onay = int(input("Onaylamak icin 1 e basiniz..."))
                 if onay == 1:
-                    odemeler.odemeYap()
+                    odemeYap()
+                    satinAl = 1
                 else:
                     satinAl = 1
+            else:
+                print("Yanlis giris yapildi.")
+                satinAl = 1
 
         elif oyunNo == 5:
             ("RONIN Two Souls oyunu sepete eklendi... ")
             sepeteEkle += 20
-            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
+            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz 2 tusuna basiniz..."))
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
-            else:
-                print("Sepet tutarinizi onayliyor musunuz? : " + sepeteEkle)
+            elif devam == 2:
+                print("Sepet tutarinizi onayliyor musunuz? : " + str(sepeteEkle))
                 onay = int(input("Onaylamak icin 1 e basiniz..."))
                 if onay == 1:
-                    odemeler.odemeYap()
+                    odemeYap()
+                    satinAl = 1
                 else:
                     satinAl = 1
+            else:
+                print("Yanlis giris yapildi.")
+                satinAl = 1
 
         elif oyunNo == 6:
             ("Yakuza oyunu sepete eklendi... ")
             sepeteEkle += 60
-            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
+            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz 2 tusuna basiniz..."))
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
-            else:
-                print("Sepet tutarinizi onayliyor musunuz? : " + sepeteEkle)
+            elif devam == 2:
+                print("Sepet tutarinizi onayliyor musunuz? : " + str(sepeteEkle))
                 onay = int(input("Onaylamak icin 1 e basiniz..."))
                 if onay == 1:
-                    odemeler.odemeYap()
+                    odemeYap()
+                    satinAl = 1
                 else:
                     satinAl = 1
+            else:
+                print("Yanlis giris yapildi.")
+                satinAl = 1
 
         elif oyunNo == 7:
             ("Graven oyunu sepete eklendi... ")
             sepeteEkle += 60
-            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
+            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz 2 tusuna basiniz..."))
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
-            else:
-                print("Sepet tutarinizi onayliyor musunuz? : " + sepeteEkle)
+            elif devam == 2:
+                print("Sepet tutarinizi onayliyor musunuz? : " + str(sepeteEkle))
                 onay = int(input("Onaylamak icin 1 e basiniz..."))
                 if onay == 1:
-                    odemeler.odemeYap()
+                    odemeYap()
+                    satinAl = 1
                 else:
                     satinAl = 1
+            else:
+                print("Yanlis giris yapildi.")
+                satinAl = 1
 
         elif oyunNo == 8:
             ("Riftdrifter oyunu sepete eklendi... ")
             sepeteEkle += 10
-            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
+            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz 2 tusuna basiniz..."))
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
-            else:
-                print("Sepet tutarinizi onayliyor musunuz? : " + sepeteEkle)
+            elif devam == 2:
+                print("Sepet tutarinizi onayliyor musunuz? : " + str(sepeteEkle))
                 onay = int(input("Onaylamak icin 1 e basiniz..."))
                 if onay == 1:
-                    odemeler.odemeYap()
+                    odemeYap()
+                    satinAl = 1
                 else:
                     satinAl = 1
-
+            else:
+                print("Yanlis giris yapildi.")
+                satinAl = 1
 
         elif oyunNo == 9:
             ("The Black Hole oyunu sepete eklendi... ")
             sepeteEkle += 32
-            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
+            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz 2 tusuna basiniz..."))
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
-            else:
-                print("Sepet tutarinizi onayliyor musunuz? : " + sepeteEkle)
+            elif devam == 2:
+                print("Sepet tutarinizi onayliyor musunuz? : " + str(sepeteEkle))
                 onay = int(input("Onaylamak icin 1 e basiniz..."))
                 if onay == 1:
-                    odemeler.odemeYap()
+                    odemeYap()
+                    satinAl = 1
                 else:
                     satinAl = 1
-
+            else:
+                print("Yanlis giris yapildi.")
+                satinAl = 1
 
         elif oyunNo == 10:
             ("Lost Souls oyunu sepete eklendi... ")
             sepeteEkle += 14
-            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz farkli bir tusa basiniz..."))
+            devam = int(input("Farkli oyun incelemek istiyorsaniz 1 e, istemiyorsaniz 2 tusuna basiniz..."))
             if devam == 1:
                 print("Liste bolumune yonlendiriliyor...")
-            else:
-                print("Sepet tutarinizi onayliyor musunuz? : " + sepeteEkle)
+            elif devam == 2:
+                print("Sepet tutarinizi onayliyor musunuz? : " + str(sepeteEkle))
                 onay = int(input("Onaylamak icin 1 e basiniz..."))
                 if onay == 1:
-                    odemeler.odemeYap()
+                    odemeYap()
+                    satinAl = 1
                 else:
                     satinAl = 1
+            else:
+                print("Yanlis giris yapildi.")
+                satinAl = 1
         else:
             print("Gecersiz giris yaptiniz...!")
-
+"""
     elif listeSec == 1:
         print(sporListesi.items())
         oyunNo = int(input("Lutfen sepete eklemek istediginiz urun numarasini giriniz..."))
@@ -506,9 +543,11 @@ while satinAl == 0:
                     odemeler.odemeYap()
                 else:
                     satinAl = 1
+
         else:
             print("Gecersiz giris yaptiniz...!")
 
     else:
         print("Program kapatiliyor. Gecerli bir liste secmediniz..!")
         satinAl = 1
+"""
