@@ -1,9 +1,6 @@
 import Odeme
 
 import sqlite3 as sql
-veritabani = sql.connect('nickname.db')
-baglanti = veritabani.cursor()
-baglanti.execute("CREATE TABLE IF NOT EXISTS nicknames(nick)")
 
 
 print("Magazamiza Hos Geldiniz...")
@@ -50,16 +47,9 @@ simulasyonListesi = {
 class oyuncu:
     def __init__(self,nick):
         self.nick = nick
-
-
 oyuncu1 = oyuncu("Jaim3")
-
-
-
 satinAl = 0
 sepeteEkle = 0
-
-
 while satinAl == 0:
     listeSec = int(input("Lutfen incelemek istegidiniz listeyi seciniz...0 = Aksiyon 1 = Spor 2 = Simulasyon"))
 
@@ -611,7 +601,6 @@ while satinAl == 0:
                 print("Yanlis giris yapildi.")
                 satinAl = 1
 
-
         elif oyunNo == 9:
             ("Jetborne Racing oyunu sepete eklendi... ")
             sepeteEkle += 18
@@ -655,7 +644,10 @@ while satinAl == 0:
         print("Program kapatiliyor. Gecerli bir liste secmediniz..!")
         satinAl = 1
 
-sorgu = "insert into nicknames VALUES ('Jaim3')"
+veritabani = sql.connect('nickname.db')
+baglanti = veritabani.cursor()
+baglanti.execute("CREATE TABLE IF NOT EXISTS nickname(nickname)")
+sorgu = "insert into nickname VALUES ('Jaim3')"
 baglanti.execute(sorgu)
 veritabani.commit()
 veritabani.close()

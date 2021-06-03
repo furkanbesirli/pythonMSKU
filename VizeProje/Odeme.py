@@ -8,15 +8,15 @@ def odemeYap():
     kart = input("Kart No :")
 
     satisDosyasi.write(name)
-    print("\n")
+    satisDosyasi.write("\n")
     satisDosyasi.write(surname)
-    print("\n")
+    satisDosyasi.write("\n")
     satisDosyasi.write(address)
-    print("\n")
+    satisDosyasi.write("\n")
     satisDosyasi.write(tel)
-    print("\n")
+    satisDosyasi.write("\n")
     satisDosyasi.write(kart)
-    print("\n")
+    satisDosyasi.write("\n")
     satisDosyasi.write("Odeme isleminiz tamamlandi. Tesekkur ederiz.")
 
 
